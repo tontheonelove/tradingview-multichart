@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="topbar">
+  <div class="brand">
+    <div class="logo-dot"></div>
+    <span>MultiChart</span>
+    <small class="tag">by Ton</small>
+  </div>
+
+  <div class="search">
+    <input id="symbolInput" type="text" placeholder="Search symbol (e.g., BINANCE:BTCUSDT)" />
+    <button id="applySymbol" class="btn">Apply to Active</button>
+  </div>
+
+  <div class="toolbar">
+    <div class="group">
+      <button class="btn btn-ghost interval" data-interval="1">1m</button>
+      <button class="btn btn-ghost interval" data-interval="5">5m</button>
+      <button class="btn btn-ghost interval" data-interval="15">15m</button>
+      <button class="btn btn-ghost interval" data-interval="60">1h</button>
+      <button class="btn btn-ghost interval" data-interval="240">4h</button>
+      <button class="btn btn-ghost interval" data-interval="1D">1D</button>
+    </div>
+
+    <div class="group">
+      <select id="layoutSelect" class="select">
+        <option value="1x1">1x1</option>
+        <option value="2x1">2x1</option>
+        <option value="2x2" selected>2x2</option>
+        <option value="3x1">3x1</option>
+        <option value="3x2">3x2</option>
+      </select>
+      <button id="syncIntervals" class="btn btn-ghost">Sync intervals</button>
+      <button id="themeToggle" class="btn btn-ghost">Theme</button>
+    </div>
+  </div>
+</header>
+
+<main class="grid" id="chartGrid">
+  <!-- dynamic cards -->
+</main>
+
+<footer class="statusbar" id="statusBar">
+  Active: <span id="activeCard">None</span> • Layout: <span id="activeLayout">2x2</span>
+</footer>
+{% endblock %}
